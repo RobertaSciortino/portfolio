@@ -75,26 +75,39 @@ var app = new Vue({
                 pageLink: "./projects/simon/index.html"
             }
         ],
+        skills: [
+            "images/html5.png",
+            "images/css3.png",
+            "images/bootstrap.png",
+            "images/sass.png",
+            "images/javascript.png",
+            "images/jquery.png",
+            "images/vuejs.png",
+            "images/php.png",
+            "images/laravel2.png",
+            "images/mysql.png",
+        ],
     },
     methods: {
         
     },
     mounted: function() {
-        AOS.init ({
-          duration: 1200
-        });
+        AOS.init ();
+
+        window.addEventListener('load', AOS.refresh);
+        window.addEventListener('resize', AOS.refresh);
 
         particlesJS('particles-js', {
             "particles": {
               "number": {
-                "value": 50,
+                "value": 100,
                 "density": {
                   "enable": true,
                   "value_area": 800
                 }
               },
               "color": {
-                "value": "#ffffff"
+                "value": "#ee82ee"
               },
               "shape": {
                 "type": "circle",
@@ -112,7 +125,7 @@ var app = new Vue({
                 }
               },
               "opacity": {
-                "value": 0.2,
+                "value": 0.5,
                 "random": false,
                 "anim": {
                   "enable": false,
@@ -122,7 +135,7 @@ var app = new Vue({
                 }
               },
               "size": {
-                "value": 10,
+                "value": 5,
                 "random": true,
                 "anim": {
                   "enable": false,
@@ -140,7 +153,7 @@ var app = new Vue({
               },
               "move": {
                 "enable": true,
-                "speed": 12,
+                "speed": 6,
                 "direction": "none",
                 "random": false,
                 "straight": false,

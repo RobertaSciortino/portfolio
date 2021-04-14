@@ -5,26 +5,27 @@
 }
 
 body {
-    background: #ef32d9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #89fffd, #ef32d9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #89fffd, #ef32d9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100vh;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
-    font-family: 'Indie Flower', cursive;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Fredericka the Great', cursive;
 }
 
 a {
     color: #fff;
-    background-color: transparent;
-}
-
-h1 {
-    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 p {
     font-size: 26px;
-    color: #fff;
 }
 
 #particles-js {
@@ -42,10 +43,18 @@ p {
     overflow-x: hidden;
     overflow-y: hidden; /* Disable horizontal scroll */
 }
+
+main p{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
 /* navbar */
 
 .navbar {
-    justify-content: flex-end;
+    font-family: 'Fredericka the Great', cursive;
+    color: rgb(238, 130, 238);
 }
 
 /* section */
@@ -55,19 +64,23 @@ section {
     height: auto;
 }
 
-section:first-of-type {
+section.welcome {
     height: calc(100vh - 56px);
-    padding: 300px 0 50px 0;
-
+    padding: 80px 0 80px 0;
 }
 
-.scroll {
-    width: 100%;
-    padding-top: 300px;
+.welcome .logo {
+    margin: 30px;
+    padding: 10px;
+    position: absolute;
+    top: 2vh;
+    right: 0;
+    z-index: 2;
 }
 
-.scroll a h1, h2, .about p {
-    color: #6736b1;
+.logo img {
+    width: 50px;
+    height: auto;
 }
 
 .websites, .spa {
@@ -76,31 +89,26 @@ section:first-of-type {
 
 
 .name h1 {
-    font-size: 126px;    
+    font-size: 40px; 
+    font-family: 'Fredericka the Great', cursive;
+    text-transform: uppercase;
 }
 
-/* .font-title{
-    font-family: 'Gochi Hand', cursive;
-} */
-
-.contacts {
-    width: 100%;
-    margin: 50px;
+.name h2 {
+    font-family: 'Fredericka the Great', cursive; 
 }
 
-.logo {
-    margin: 30px;
+.scroll a h2 {
+    color: rgb(238, 130, 238);
+    text-transform: uppercase;
+    font-size: 24px;
 }
 
-.logo img {
-    width: 50px;
-    height: auto;
-}
-
+/* arrows */
 
 .arrows {
-	width: 60px;
-	height: 72px;
+	max-width: 60px;
+	max-height: 72px;
 	position: absolute;
 	left: 50%;
 	margin-left: -30px;
@@ -150,19 +158,26 @@ section:first-of-type {
 
 .section-title {
     width: 100%;
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .section-title h1 {
-    line-height: 2em;
+    font-family: 'Fredericka the Great', cursive;
+    padding: 10px 0 15px 0;
 }
+
+
+.about-me-section .section-title, .skills .section-title {
+    background-color: transparent;
+}
+
 
 .card {
     border-radius: 0;
-    border-color: none;
-    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.4); 
-    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.4);   
+    border: none;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.8); 
+    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.8);   
 }
 
 /* descriptions*/
@@ -171,45 +186,27 @@ section:first-of-type {
 }
 
 .description img {
-    width: 60px;
-    height: 60px;
+    max-width: 60px;
+    max-height: 60px;
 }
 
 .description a {
     border: 1px solid #fff;
     padding: 10px 20px;
-    color: #fff;
     font-size: 20px;
 }
 
-.hexa, .hexa div {
-    margin: 0 auto;
-    transform-origin: 50% 50%;
-    overflow: hidden;
-    width: 300px;
-    height: 300px;
+.description a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-.hexa {
-    width: 325px;
-    height: 230px;
-}
-
-.hexa div {
-    width: 100%;
-    height: 100%;
-}
-
-.hexa {
-    transform: rotate(120deg);
-}
-
-.hex1 {
-    transform: rotate(-60deg);
-}
-
-.hex2 {
-    transform: rotate(-60deg);
+.photo-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    -webkit-box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.8); 
+    box-shadow: 2px 3px 15px 5px rgba(0,0,0,0.8);  
 }
 
 .item {
@@ -224,4 +221,72 @@ section:first-of-type {
 
 .about p {
     line-height: 2em;
+}
+
+.about-me-section .section-title h1, .skills .section-title h1 {
+  color: rgb(238, 130, 238);
+}
+
+.skills {
+    max-width: 100%;
+    margin-bottom: 200px;
+}
+
+.skills .section-title h1 {
+    margin-bottom: 50px;
+}
+
+.skills-logo {
+    max-width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 100px auto;
+}
+
+.skills-logo img {
+    width: 100px;
+    height: auto;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    
+    section.welcome {
+        padding: 120px 0 50px 0;
+    }
+
+    .welcome .logo {
+        left: 0;
+    }    
+    
+    .name h1 {
+        font-size: 70px; 
+    }
+    
+    .scroll a h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    section.welcome {
+        padding: 200px 0 50px 0;
+    }
+
+    .welcome .logo {
+        position: fixed;
+    } 
+
+    .name h1 {
+        font-size: 100px; 
+    }
+    
+    .scroll a h2 {
+        font-size: 40px;
+    }
+
+    .skills-logo {
+        justify-content: space-around;
+    }
 }

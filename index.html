@@ -5,134 +5,172 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://robertasciortino.altervista.org/images/portfolio.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     
-    <title>Document</title>
+    <title>Portfolio - RobertaSciortino</title>
 </head>
 
 <body>
     <div id="root">
-        <div id="particles-js" class="overlay"></div>
         <main>
-            <nav class="navbar">
-                <a class="navbar-brand" href="#about-me">About me</a>
-            </nav>
-            <section class="welcome d-flex flex-column justify-content-between">
-                <div class="name text-center">
-                    <h1 class="font-title">
-                        Roberta Sciortino
-                    </h1>
-                    <h2 class="font-title">
-                        Junior Web Developer
-                    </h2>
-                </div>
-                    
-                <div class="scroll text-center">
-                    <a href="">
-                        <h1 class="pt-3">
-                            Projects
-                        </h1>
-                    </a>
-                    <svg class="arrows mb-3">
-                        <path class="a1" d="M0 0 L30 32 L60 0"></path>
-                        <path class="a2" d="M0 20 L30 52 L60 20"></path>
-                        <path class="a3" d="M0 40 L30 72 L60 40"></path>
-                    </svg>
-                </div>
-            
-                <div class="logo">
-                    <a href="">
-                        <img src="images/LI-In-Bug.png" alt="">
-                    </a>
-                    <a href="">
-                        <img src="images/github.png" alt="">
-                    </a>
-                </div>
+            <div class="container-fluid p-0">
+                <div class="row m-0">
+                    <div class="col-12 p-0">
+                        <div id="particles-js" class="overlay"></div>
+                        <nav class="navbar justify-content-end">
+                            <a class="navbar-brand" href="#about-me">About me</a>
+                        </nav>
+                        <section class="welcome d-flex flex-column justify-content-around">
+                            <div class="name text-center">
+                                <h1>
+                                    Roberta Sciortino
+                                </h1>
+                                <h2>
+                                    Junior Web Developer
+                                </h2>
+                            </div>
+                                
+                            <div class="scroll text-center">
+                                <a href="" class="text-decoration-none">
+                                    <h2>
+                                        Projects
+                                    </h2>
+                                </a>
+                                <svg class="arrows mb-3">
+                                    <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                                    <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                                    <path class="a3" d="M0 40 L30 72 L60 40"></path>
+                                </svg>
+                            </div>
                         
-                
-            </section>
-            <section class="websites">
-                <div class="section-title mb-5">
-                    <h1 class="text-center">
-                        Website replicas
-                    </h1>
-                </div>
-                <div class="card-container mt-5 pb-5">
-                    <div class="item text-center d-flex flex-column align-items-center pb-5 mb-5" id="card-trigger" v-for="replica in replicas">
-                        <div class="card mt-3 mb-3 ml-3 mr-3" style="width: 44rem;"  data-aos-anchor="card-trigger" data-aos="zoom-in">
-                            <img :src="replica.image" class="card-img-top" alt="...">
-                        </div>
-                        <div class="description mt-3 mb-5">
-                            <p class="text-center"  data-aos-anchor="card-trigger" data-aos="slide-right">
-                                {{replica.description}}
-                            </p>
-                            <div class="logo"  data-aos-anchor="card-trigger" data-aos="slide-left">
-                                <img :src="techLogo" alt="logo" v-for="techLogo in replica.techLogo">
+                            <div class="logo">
+                                <a href="https://www.linkedin.com/in/roberta-sciortino-a35931186/">
+                                    <img src="images/LI-In-Bug.png" alt="">
+                                </a>
+                                <a href="https://github.com/RobertaSciortino">
+                                    <img src="images/github.png" alt="">
+                                </a>
                             </div>
-                            <a :href="replica.pageLink"  data-aos-anchor="card-trigger" data-aos="zoom-in">
-                                Show
-                            </a>
-                        </div>
+                        </section>
                     </div>
-                </div> 
-                
-            </section>
-            <section class="spa">
-                <div class="section-title">
-                    <h1 class="text-center">
-                        Single Page Applications
-                    </h1>
                 </div>
-                <div class="card-container mt-5 pb-5">
-                    <div class="item text-center d-flex flex-column align-items-center pb-5 mb-5" id="card-trigger" v-for="app in apps">
-                        <div class="card mt-3 mb-3 ml-3 mr-3" style="width: 44rem;" data-aos-anchor="card-trigger" data-aos="zoom-in">
-                            <img :src="app.image" class="card-img-top" alt="...">
-                        </div>
-                        <div class="description mt-3 mb-5">
-                            <p class="text-center"  data-aos-anchor="card-trigger" data-aos="slide-left">
-                                {{app.description}}
-                            </p>
-                            <div class="logo"  data-aos-anchor="card-trigger" data-aos="slide-right">
-                                <img :src="techLogo" alt="logo" v-for="techLogo in app.techLogo">
+                <div class="row m-0">
+                    <div class="col-12 p-0">
+                        <section class="websites">
+                            <div class="section-title mb-5">
+                                <h1 class="text-center">
+                                    Website replicas
+                                </h1>
                             </div>
-                            <a :href="app.pageLink"  data-aos-anchor="card-trigger" data-aos="zoom-in">
-                                Show
-                            </a>
-                        </div>
+                            <div class="card-container mt-5 pb-5">
+                                <div class="item text-center d-flex flex-column align-items-center pb-5 mb-5" :id="'replica-trigger' + index" v-for="(replica, index) in replicas">
+                                    <div class="card mt-3 mb-3 ml-3 mr-3" style="max-width: 44rem;"  :data-aos-anchor="'#replica-trigger' + index" data-aos="zoom-out" data-aos-duration="1000">
+                                        <img :src="replica.image" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="description mt-3 mb-5">
+                                        <p class="text-center"  :data-aos-anchor="'#replica-trigger' + index" data-aos="zoom-in" data-aos-delay="300">
+                                            {{replica.description}}
+                                        </p>
+                                        <div class="logo mb-5"  :data-aos-anchor="'#replica-trigger' + index" data-aos="fade-in" data-aos-delay="400">
+                                            <img :src="techLogo" alt="logo" v-for="techLogo in replica.techLogo">
+                                        </div>
+                                        <a :href="replica.pageLink"   class="text-decoration-none mt-5" :data-aos-anchor="'#replica-trigger' + index" data-aos="zoom-out"  data-aos-delay="500">
+                                            Show
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>  
+                        </section>
                     </div>
                 </div>
-            </section>
-            <section class="my-projects">
-                <div class="section-title">
-                    <h1 class="text-center" id="about-me">
-                        About me
-                    </h1>
-                </div>
-                <div class="photo-container mt-5 mb-5">
-                    <div class="hexa">
-                        <div class="hex1">
-                          <div class="hex2">
-                            <img src="images/me.jpg" class="card-img-top" alt="..." >
-                          </div>
-                        </div>
+                <div class="row m-0">
+                    <div class="col-12 p-0">
+                        <section class="spa">
+                            <div class="section-title">
+                                <h1 class="text-center">
+                                    Single Page Applications
+                                </h1>
+                            </div>
+                            <div class="card-container mt-5 pb-5">
+                                <div class="item text-center d-flex flex-column align-items-center pb-5 mb-5" :id="'app-trigger' + index" v-for="(app, index) in apps">
+                                    <div class="card mt-3 mb-3 ml-3 mr-3" style="max-width: 44rem;" :data-aos-anchor="'#app-trigger' + index" data-aos="zoom-out" data-aos-duration="1000">
+                                        <img :src="app.image" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="description mt-3 mb-5">
+                                        <p class="text-center"  :data-aos-anchor="'#app-trigger' + index" data-aos="zoom-in" data-aos-duration="1000">
+                                            {{app.description}}
+                                        </p>
+                                        <div class="logo mb-5"  :data-aos-anchor="'#app-trigger' + index" data-aos="fade-in" data-aos-duration="1000">
+                                            <img :src="techLogo" alt="logo" v-for="techLogo in app.techLogo">
+                                        </div>
+                                        <a :href="app.pageLink"  class="text-decoration-none"  :data-aos-anchor="'#app-trigger' + index" data-aos="zoom-out" data-aos-duration="1000">
+                                            Show
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
-                <div class="about pt-5 pb-5">
-                    <p class="text-center">
-                       Hi! I'm Roberta, junior web developer. <br>
-                       I have a Second Degree in Adult and continuing education.
-                       Until a year ago my professional path was in another area - I was a teacher in the public school and a social professional educator at a non-profit. <br>
-                       I made this choice because I known the world of web programming at university and it made me so curious and passionate about it. Being always open to new challenges and opportunities, I decided to follow my passion and make it a job.
-                       <br>
-                       My hobbies are drawing and painting, activities that have led me to develop the ability to observe details and reproduce them faithfully.This is what I also do in web development.   
-                    </p>
+                <div class="row m-0">
+                    <div class="col-12 p-0">
+                        <section class="skills mt-5">
+                            <div class="section-title pt-5 pb-5">
+                                <h1 class="text-center" id="skills">
+                                    Tech skills
+                                </h1>
+                            </div>
+                            <div class="skills-logo mb-5 d-flex">
+                                <img :src="skill" alt="logo" class="m-2" v-for="(skill, index) in skills" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                            </div>
+                        </section>
+                    </div>
                 </div>
-            </section>
+                <div class="row m-0">
+                    <div class="col-12 p-0">
+                        <section class="about-me-section mt-5">
+                            <div class="section-title pt-5 pb-5">
+                                <h1 class="text-center" id="about-me">
+                                    About me
+                                </h1>
+                            </div>
+                            <div class="photo-container mt-3 mb-3 d-flex justify-content-center">
+                                <img src="images/me.jpg" class="card-img-top" alt="..." >
+                            </div>
+                            <div class="about pt-5 pb-5">
+                                <p class="text-center">
+                                   Hi! I'm Roberta, junior web developer. <br>
+                                   I have a Master Degree in Lifelong Learning.
+                                   Until a year ago my professional path was in another area - I was a teacher in the public school and a social professional educator at a non-profit. <br>
+                                   I made this choice because I knew the world of web programming at university and it made me so curious and passionate about it. Being always open to new challenges and opportunities, I decided to follow my passion and make it a job.
+                                   <br>
+                                   My hobbies are drawing and painting, activities that led me to develop the ability to observe details and reproduce them faithfully. This is what I also do in web development.
+                                </p>
+                            </div>
+                            <div class="logo text-center mb-5 font-size-12 d-flex flex-column">
+                                    Look at my works on Instagram
+                                <a href="https://www.instagram.com/just_anartwall/" class="mb-3">
+                                    <img src="images/instagram.png" alt="">
+                                </a>
+                                    Download my CV
+                                <a href="docs/CV_RobertaSciortino.pdf" download="CV_RobertaSciortino">
+                                    <img src="images/cv.png" alt="">
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+                
+            </div>
         </main>
     
     </div>
