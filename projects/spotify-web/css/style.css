@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+
+.main-container {
+    display: flex;
+}
+
+
+
+aside {
+    background-color: rgba(0,0,0,0.9);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+aside a {
+    color: rgba(255,255,255,0.8);
+}
+
+aside a:hover {
+    color: #FFF;
+}
+
+.logo img {
+    width: 120px;
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
+
+.logo img.mini {
+    width: 40px;
+    display: none;
+}
+
+.nav-top li,
+.nav-bottom li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.nav-top ul:first-of-type {
+    margin-bottom: 30px;
+}
+
+.nav-top ul:first-of-type li a {
+    padding-left: 10px;
+}
+
+.nav-top ul:first-of-type li a:hover {
+    border-left: 2px solid #28D25F;
+}
+
+.nav-bottom li:first-child {
+    border-bottom: 1px solid #8A8776;
+}
+
+
+.playlists {
+    background: -webkit-linear-gradient(top left, rgba(245,213,3,1) 0%, rgba(0,0,0,1) 91%);
+    background: -o-linear-gradient(top left, rgba(245,213,3,1) 0%, rgba(0,0,0,1) 91%);
+    background: linear-gradient(to bottom right, rgba(245,213,3,1) 0%, rgba(0,0,0,1) 91%);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+}
+
+.menu a:last-child {
+    display: none;
+}
+
+.menu a:hover {
+    color: #FFF;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.scroll {
+    overflow: auto;
+    height: calc(100vh - 180px);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-top: 50px;
+}
+
+
+/* Chrome, Safari and Opera  */
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+h2 {
+  margin-left: 20px;
+  color: rgba(255,255,255,0.7);
+}
+
+.for-you, .recently-played {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    margin: 30px;
+}
+
+.card .label {
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+}
+
+.album img {
+    max-width: 150px;
+    border-radius: 50%;
+
+}
+
+.card:nth-of-type(3n+3) .album img {
+    border-radius: 0;
+}
+
+.card .label:hover {
+    color: #FFF;
+}
+
+footer {
+    background-color: #282828;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+}
+
+.cover {
+    display: flex;
+    align-self: center;
+}
+
+.cover img {
+    padding: 15px;
+}
+
+.track {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.track-title {
+    font-size: 14px;
+}
+
+.track-artist {
+    font-size: 12px;
+}
+
+.save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+
+.center {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.control-buttons a {
+    margin: 0 15px 10px 15px;
+}
+
+.fa-play-circle {
+    font-size: 30px;
+}
+
+.track p,
+.save a i,
+.control-buttons a i,
+.buttons a i {
+    color: rgba(255,255,255,0.7);
+}
+
+.range {
+    display: flex;
+    align-items: center;
+}
+
+.range span {
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255,255,255,0.9);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin: 0 5px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255,255,255,0.9);
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.buttons a,
+.buttons input {
+    margin: 0 10px;
+}
+
+
+@media screen and (max-width: 480px){
+
+    .logo img {
+        display: none;
+    }
+
+    .logo img.mini {
+        display: block;
+        margin-right: 0;
+    }
+
+    nav a span,
+    nav a p {
+        display: none;
+    }
+
+    .menu a {
+        display: none;
+    }
+
+    .menu a:last-child {
+        display: block;
+    }
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .menu {
+        padding-left: 20px;
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    .card .label {
+        font-size: 12px;
+    }
+
+    .track {
+        display: none;
+    }
+
+    .range span {
+        display: none;
+    }
+
+    .center {
+        max-width: 50%;
+    }
+
+    .control-buttons a {
+        margin: 0 5px 10px;
+    }
+
+    .right {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu a {
+        display: none;
+    }
+
+    .menu a:last-child {
+        display: block;
+    }
+
+    .logo img {
+        margin-right: 0;
+    }
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .menu {
+        padding-left: 20px;
+    }
+
+    .track {
+        display: none;
+    }
+
+    .card {
+        margin: 30px;
+    }
+
+    .buttons a i {
+        font-size: 14px;
+    }
+
+    .card .label {
+        font-size: 14px;
+    }
+}

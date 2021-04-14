@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Boolflix</title>
+  </head>
+  <body>
+    <div id="root">
+      <header class="display-flex">
+        <div class="navbar display-flex">
+          <div class="logo">
+            <a href="#">
+              <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="">
+            </a>
+          </div>
+          <div class="nav display-flex">
+            <a href="#filmsSection" @click="showFilms()">
+              Film
+            </a>
+            <a href="#seriesSection" @click="showSeries()">
+              Serie TV
+            </a>
+          </div>
+        </div>
+        <div class="searchbar">
+          <input @keyup.enter="search()" type="text" name="" value="" v-model="userSearch">
+          <button @click="search()" type="button" name="button">Cerca</button>
+        </div>
+      </header>
+
+      <main class="display-flex" v-cloak>
+        <div v-if="searching" class="spinner">
+          <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <div v-else-if="searchedTitle && filmsList.length == 0 && seriesList.length == 0" class="no-results">
+          <h2>
+            La ricerca non ha prodotto risultati
+          </h2>
+        </div>
+
+        <div v-else-if="filmsList.length || seriesList.length" class="results display-flex">
+          <h2>Risultati ricerca per: "{{searchedTitle}}"</h2>
+          <h2 id="filmsSection">Film</h2>
+          <div class="cards-container display-flex">
+            <div class="flip-card display-flex" v-for="film in filmsList">
+              <div class="card">
+                <div class="poster">
+                  <img class="image-not-available" v-if="film.poster_path == null" src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
+                  <img v-else :src="'https://image.tmdb.org/t/p/w342' + film.poster_path" alt="">
+                </div>
+                <div class="info display-flex">
+                  <ul>
+                    <li class="title">
+                      <span> Titolo: </span> {{film.title}}
+                    </li>
+                    <li class="original-title">
+                      <span> Titolo originale: </span> {{film.original_title}}
+                    </li>
+                    <li v-if="isFlagVisible(film)" class="original-language">
+                      <span> Lingua originale: </span>
+                      <img :src="'img/' + film.original_language + '.png'" :alt="film.original_language">
+                    </li>
+                    <li v-else class="original-language">
+                      <span> Lingua originale: </span> {{film.original_language}}
+                    </li>
+                    <li class="vote">
+                      <i class="fas fa-star" v-for="vote in getVote(film)"></i>
+                      <i class="far fa-star" v-for="vote in (maxVote - getVote(film))"></i>
+                    </li>
+                    <li class="overview">
+                      <span> Descrizione: </span> {{film.overview}}
+                    </li>
+                    <li class="cast">
+                      <span> Cast: </span>
+                      <p v-for="actor in getCast(film, castsFilms)">
+                        {{actor.name}}
+                      </p>
+                    </li>
+                    <li class="genre"  v-if="film.genre_ids.length > 0">
+                      <span> Genere:</span>
+                      <p v-for="id in film.genre_ids">
+                        {{getGenre(id, filmsGenres)}}
+                      </p>
+                    </li>
+                    <li class="genre" v-else>
+                      <span> Genere:</span> n.d.
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fas fa-play-circle fa-3x"></i>
+                      </a>
+                      <p>
+                        Guarda ora
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 id="seriesSection">Serie TV</h2>
+          <div class="cards-container display-flex">
+            <div class="flip-card display-flex"  v-for="serie in seriesList">
+              <div class="card">
+                <div class="poster">
+                  <img class="image-not-available" v-if="serie.poster_path == null" src="https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png" alt="">
+                  <img v-else :src="'https://image.tmdb.org/t/p/w342' + serie.poster_path" alt="">
+                </div>
+                <div class="info display-flex">
+                  <ul>
+                    <li class="title">
+                      <span> Titolo:</span> {{serie.name}}
+                    </li>
+                    <li class="original-title">
+                      <span> Titolo originale: </span> {{serie.original_title}}
+                    </li>
+                    <li v-if="isFlagVisible(serie)" class="original-language">
+                      <span> Lingua originale: </span>
+                      <img :src="'img/' + serie.original_language + '.png'" :alt="serie.original_language">
+                    </li>
+                    <li v-else class="original-language">
+                      <span> Lingua originale: </span> {{serie.original_language}}
+                    </li>
+                    <li class="vote">
+                      <i class="fas fa-star" v-for="vote in getVote(serie)"></i>
+                      <i class="far fa-star" v-for="vote in (maxVote - getVote(serie))"></i>
+                    </li>
+                    <li class="overview">
+                      <span> Descrizione: </span> {{serie.overview}}
+                    </li>
+                    <li class="cast">
+                      <span> Cast: </span>
+                      <p v-for="actor in getCast(serie, castsSeries)">
+                        {{actor.name}}
+                      </p>
+                    </li>
+                    <li class="genre"  v-if="serie.genre_ids.length > 0">
+                      <span> Genere: </span>
+                      <p v-for="id in serie.genre_ids">
+                        {{getGenre(id, seriesGenres)}}
+                      </p>
+                    </li>
+                    <li class="genre" v-else>
+                      <span> Genere: </span> 'n.d.'
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fas fa-play-circle fa-3x"></i>
+                      </a>
+                      <p>
+                        Guarda ora
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+
+    <script src="assets/main.js" charset="utf-8"></script>
+  </body>
+</html>

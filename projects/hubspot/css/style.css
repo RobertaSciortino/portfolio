@@ -1,0 +1,841 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* ----------inizio header------------ */
+
+header {
+    height: 80px;
+    border-top: 1px solid #7C98B6;
+    border-bottom: 1px solid #7C98B6;
+    background-color: #F5F8FA;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.container {
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+    font-size: 16px;
+}
+
+header .container {
+    clear: both;
+    content:"";
+    display: table;
+}
+
+.language {
+    float: left;
+    width: 500px;
+    padding: 20px 0;
+}
+
+.language li {
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+}
+
+
+.language a {
+    text-decoration: none;
+    color: #33475B;
+    padding: 20px;
+}
+
+/* inizio dropdown mwenu */
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  background-color: #FFF;
+  width: 125px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 3px;
+  box-shadow:  0px 5px 5px 0px rgba(50,50,50,0.1);
+  z-index: 1;
+}
+
+.drop-menu a {
+  color: #33475B;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.drop-menu a:hover {
+    background-color: #E5F5F8;
+}
+
+.language:hover .drop-menu{
+    display: block;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    box-shadow:  -2px -2px 5px 0px rgba(50,50,50,0.1);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    display: none;
+}
+
+/* fine dropdown mwenu */
+
+.language:hover .square {
+    display: block;
+}
+
+.search {
+    float: right;
+    width: 500px;
+    padding: 11px 0;
+}
+
+.search ul {
+    float: right;
+}
+
+.search li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.search a {
+    text-decoration: none;
+    color: #33475B;
+    padding: 20px;
+}
+
+.search i {
+    color: #45BBCE;
+}
+
+.search .log-in {
+    border: 1px solid #FF7A59;
+    background-color: #FFF;
+    color: #FF7A59;
+    padding: 15px 25px;
+    border-radius: 3px;
+}
+
+.search .free {
+    background-color: #FF7A59;
+    color: #FFF;
+    padding: 15px 25px;
+    border-radius: 3px;
+    font-size: 12px;
+    border: 1px solid #FF7A59;
+}
+
+.log-in, .free {
+    font-size: 12px;
+}
+
+/* ----------fine header----------- */
+
+
+/* ----------inizio navbar----------- */
+
+
+nav {
+    background-color: #fff;
+    height: 180px;
+    width: 1000px;
+    margin: auto;
+    padding-top: 80px;
+}
+
+nav .container {
+    clear: both;
+    content: "";
+    display: table;
+    }
+
+.logo {
+    width: 180px;
+    height: 100%;
+    padding-top: 10px;
+    float: left;
+}
+
+a img {
+    width: 180px;
+    height: 68px;
+}
+
+.menu {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 40px 0;
+    float: right;
+}
+
+
+
+.menu li {
+    display: inline-block;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #33475B;
+    padding: 20px;
+}
+
+/* ----------fine navbar----------- */
+
+/* ----------inizio info-banner---------- */
+
+.info-banner {
+    background-color: #425B76;
+    /* height: 100px; */
+    font-size: 16px;
+    color: #FFF;
+    padding: 10px 30px;
+    line-height: 30px;
+}
+
+.info-banner .container {
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+    padding: 10px 20px;
+    position: relative;
+    }
+
+
+.info-banner span {
+    text-transform: uppercase;
+}
+
+.info-banner a {
+    font-weight: bold;
+    color: #FFF;
+}
+
+/* ---------inizio jumbotron--------- */
+
+.jumbotron {
+    background-color: #FFF3EE;
+    color: #33475B;
+    position: relative;
+}
+
+.homepage-hero__svg {
+  position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 70%;
+    z-index: 1;
+}
+
+.homepage-hero__img::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #afebe4;
+    height: 59px;
+    width: 100%;
+    border-top: 3px solid #33475b;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.homepage-hero__img::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #00a48d;
+    height: 112px;
+    width: calc(50vw - 390px);
+    border-top: 3px solid #33475b;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+img.homepage-hero__svg {
+  width: 100%;
+  margin: 0;
+}
+
+.big-title {
+    width: 500px;
+    margin-right: 500px;
+    padding: 80px 10px 10px 10px;
+}
+
+.big-title h1, .big-title p {
+    padding: 10px;
+}
+
+ h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.big-title p {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.get-free {
+    width: 250px;
+    margin-right: 750px;
+    padding: 0 20px 80px 20px;
+}
+
+.free {
+    background-color: #FF7A59;
+    color: #FFF;
+    padding: 25px 40px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #FF7A59;
+}
+
+.get-free p {
+    font-size: 14px;
+    padding: 20px 0;
+    line-height: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+/* ----------fine jumbotron--------- */
+
+/* ----------iniziocard-box--------- */
+
+.card-box {
+    background-color: #F5F8FA;
+    /* padding: 30px; */
+    color: #33475B;
+    }
+
+.card-box .container {
+    padding: 100px 0px 100px 10px;
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.card {
+    max-width: 320px;
+    height: 400px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    padding: 40px 20px;
+    border-radius: 3px;
+}
+
+.card:not(:first-child) {
+    box-shadow: 0px 0px 10px 7px rgba(50,50,50,0.1);
+}
+
+.card:first-child {
+    background-color: #F5F8FA;
+    border: 0;
+    padding: 0 10px 0 0;
+}
+
+.card:first-child h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 10px;
+}
+
+.card:first-child p {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.description h3 {
+    display: inline;
+    font-size: 25px;
+}
+
+.description p {
+    font-size: 14px;
+    border-bottom: 1px solid #999;
+    padding-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.description h3, .description p {
+    padding-bottom: 20px;
+}
+
+.features p {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.features li {
+    list-style-type: none;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.features .free {
+    background-color: #FF7A59;
+    color: #FFF;
+    padding: 20px 80px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #FF7A59;
+    margin-top: 10px;
+}
+
+.card i {
+    color: #FF7A59;
+}
+
+.card:nth-of-type(3) {
+    position: relative;
+}
+
+.ribbon {
+    height: 16px;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: #00BDA5;
+    font-size: 10px;
+    padding: 5px 5px 5px 10px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}
+
+/* ----------fine ----------iniziocard-box--------- */
+
+/* ----------inizio statistics-box----------------- */
+
+.statistics-box {
+    background-image: linear-gradient(45deg,#00a4bd,#00bda5);
+    color: #FFF;
+    text-align: center;
+}
+
+.community h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 10px;
+}
+
+.community p {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.community {
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.row-top, .row-bottom {
+    content: "";
+    clear: both;
+    display: table;
+    margin: auto;
+    max-width: 100%;
+}
+
+.row-top {
+    border-bottom: 1px solid #FFF;
+}
+
+.cell {
+    float: left;
+    min-width: 247px;
+    height: 200px;
+}
+
+.row-top .cell {
+    padding: 0 30px;
+}
+
+.row-bottom .cell {
+    padding: 30px 0;
+}
+
+.cell:not(:last-child) {
+    border-right: 1px solid #FFF;
+}
+
+.row-top .logo-cell {
+    padding-top: 30px;
+    margin-top: 10px;
+}
+
+.cell i {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.cell i, img {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.info-cell h1 {
+    display: inline-block;
+}
+
+.info-cell span{
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: 10px;
+    text-align: left;
+}
+
+.cell:last-child {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.cell p {
+    font-size: 14px;
+    line-height: 3em;
+}
+
+.statistics {
+    padding-bottom: 100px;
+}
+
+/* ----------fine statistics-box----------------- */
+
+/* ---------inizio info customers---------------- */
+
+.info-customers {
+    color: #33475B;
+}
+
+.info-customers .row-top {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.customers, .companies {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.customers {
+    width: 40%;
+}
+
+.companies {
+    width: 60%;
+    padding-left: 35px;
+}
+
+.company {
+    width: 120px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+    margin: 10px;
+}
+
+.customers  h2, .start h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 10px;
+}
+
+.customers p, .start p:first-of-type {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info-customers .row-bottom {
+    padding-bottom: 100px;
+}
+
+#atlassian {
+    background-image:url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/Atlassian-horizontal-blue@2x.png);
+    }
+
+#doordash {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/doordash-owler-20181011-194113-original@2x.png);
+}
+
+#g2crowd {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/g2crowd-logo@2x.png);
+}
+
+#surveymonkey {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/homepage/Vertical-Sabaeus-RGB.svg);
+}
+
+#subaru {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/Subaru-Logo-v2-186x63@2x.png);
+}
+
+#wistia {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/Wistia-logo@2x.png);
+}
+#classpass {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/Classpass-logo@2x.png);
+}
+#vmware {
+    background-image: url(https://www.hubspot.com/hubfs/assets/hubspot.com/home/home-page-logos-June-2019/VMware-logo-gry-RGB-300dpi@2x.png);
+}
+
+
+.start, .photo {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.start button {
+    background-color: #FF7A59;
+    color: #FFF;
+    padding: 30px 40px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #FF7A59;
+    margin-top: 10px;
+}
+
+.start p:last-of-type {
+    font-size: 14px;
+    padding: 20px 0;
+    line-height: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.photo img {
+    height: 500px;
+    float: right;
+}
+
+/* ----------fine info-customers---------------- */
+
+/* ----------inizio footer---------------------- */
+
+footer {
+    background-color: #33475B;
+}
+
+.footer-top {
+    clear: both;
+    content: "";
+    display: table;
+    padding-top: 100px;
+}
+
+.navbar {
+    width: 250px;
+    float: left;
+}
+
+footer li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.footer-top li:not(:first-child), .navbar button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.navbar button {
+    background-color: #FFF;
+    color: #33475B;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    border: 1px solid #FFF;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.icons {
+    font-size: 20px;
+}
+
+.icons a:not(:last-child) {
+    margin-right: 15px;
+}
+
+/* languages */
+
+.selection {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #FFF;
+}
+
+.selection, .informative {
+    color: #CBD6E2;
+}
+
+.languages li {
+    display: inline-block;
+    margin: 5px;
+}
+
+.languages a, .legal a {
+    text-decoration: none;
+    color: #CBD6E2;
+
+}
+
+/* informative */
+
+.informative {
+    clear: both;
+    content: "";
+    display: table;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.copyright {
+    width: 50%;
+    float: left;
+}
+
+.copyright img {
+    width: 100px;
+    height: 60px;
+}
+.privacy {
+    width: 50%;
+    float: right;
+}
+
+.legal {
+    float: right;
+    padding-top: 40px;
+}
+
+.legal a {
+    display: inline-block;
+}
+
+.legal a:first-child {
+    margin-right: 20px;
+}
+
+/* ----------inizio chatbot--------- */
+
+.chatbot {
+    width: 220px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chatbot a {
+    text-decoration: none;
+}
+
+.message {
+    background-color: #FFF;
+    color: #33475B;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 7px rgba(50,50,50,0.1);
+    position: relative;
+}
+
+.message p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.message i {
+    color: #FFC83D;
+    font-size: 18px;
+}
+
+.robot-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 90px;
+    cursor: pointer;
+}
+
+.chat-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #425B76;
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 40px;
+    line-height: 40px;
+    padding-top: 12px;
+    padding-left: 12px;
+    box-shadow: 0px 0px 10px 7px rgba(50,50,50,0.1);
+    float: right;
+}
+
+/* ----------fine chatbot--------- */
+
+/* -----------aggiunta hover in button----------- */
+
+.log-in:hover {
+    background-color: #FFF1EE;
+    cursor: pointer;
+}
+
+.free:hover {
+    background-color: #FFBCAC;
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: #EAF0F6;
+    cursor: pointer;
+}
